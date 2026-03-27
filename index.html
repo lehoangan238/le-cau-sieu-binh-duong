@@ -106,11 +106,28 @@
         .tap-fast {
             touch-action: manipulation;
         }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .defer-render {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 800px;
+        }
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
             animation: none !important;
             transition-duration: 0.01ms !important;
             scroll-behavior: auto !important;
+          }
+          .reveal {
+            opacity: 1 !important;
+            transform: none !important;
           }
         }
     </style>
@@ -120,7 +137,7 @@
 <nav class="fixed top-2 left-2 right-2 md:top-3 md:left-3 md:right-3 lg:top-0 lg:left-0 lg:right-0 z-50 glass-nav shadow-sm shadow-primary-container/5 rounded-xl border border-primary-container/20 lg:rounded-none lg:border-0">
 <div class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 max-w-7xl mx-auto">
 <div class="flex items-center gap-3">
-<img alt="Logo Hoa Viên Bình Dương" class="h-10 sm:h-11 lg:h-12 w-auto object-contain" src="logo.png"/>
+<img alt="Logo Hoa Viên Bình Dương" class="h-10 sm:h-11 lg:h-12 w-auto object-contain" decoding="async" src="logo.png"/>
 <div class="h-6 w-px bg-primary/30 mx-1"></div>
 <div class="flex flex-col">
 <div class="font-['Playfair_Display'] text-base sm:text-lg lg:text-xl font-bold text-[#4a3628] leading-tight tracking-[0.06em] lg:tracking-[0.08em]">CPHA CO.</div>
@@ -153,7 +170,7 @@
 <!-- Hero Section -->
 <header class="relative min-h-[calc(100vh-76px)] lg:min-h-screen flex items-center pt-10 lg:pt-24 pb-10 lg:pb-12 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Khung cảnh chùa thanh tịnh trong ánh nắng sớm" class="w-full h-full object-cover" data-alt="Sunlit Buddhist temple in Vietnam at dawn with soft morning mist and warm golden sunlight filtering through traditional architecture" src="Picture1.png"/>
+<img alt="Khung cảnh chùa thanh tịnh trong ánh nắng sớm" class="w-full h-full object-cover" data-alt="Sunlit Buddhist temple in Vietnam at dawn with soft morning mist and warm golden sunlight filtering through traditional architecture" decoding="async" fetchpriority="high" loading="eager" src="Picture1.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/20"></div>
 <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_35%,rgba(212,175,55,0.20),transparent_48%)]"></div>
 <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(251,249,245,0.72),rgba(251,249,245,0.08)_40%,rgba(251,249,245,0.05))]"></div>
@@ -191,7 +208,7 @@
 </div>
 </header>
 <!-- Trust Bar -->
-<section class="bg-surface-container py-12">
+<section class="bg-surface-container py-12 reveal">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
 <div class="flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-primary-container text-3xl mb-2" data-icon="groups">groups</span>
@@ -216,11 +233,11 @@
 </div>
 </section>
 <!-- Meaning Section -->
-<section class="py-16 md:py-24 overflow-hidden" id="meaning">
+<section class="py-16 md:py-24 overflow-hidden reveal" id="meaning">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 <div class="relative">
 <div class="aspect-[4/5] relative z-10 border-[16px] border-surface-container-high overflow-hidden shadow-xl">
-<img class="w-full h-full object-cover" data-alt="Close up of a Buddhist monk's hands holding incense sticks with soft smoke rising in a sunlit temple courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjNoUbLNsM4VuPEmmgvky6JH0RSnZeltkUU_omo0pu7duJzUe4htbUqGSJGFtBb7nRZ-q3cu72w_toHZhS9l-YkBw6vW8Tk06qWf0-vaTjMlAQzmFKl4hSd3aA3ascZEd7cNXZoL-GPz-elCdeLZZFBX7M6-W5unIJDsziwt9ubak_WxQBLA3DDI8w2hbMLuECX__MaOv6n8ETf2Qz_0rop6ZF73eAL_R-AkRM3kiR7E2Y1-6TjgxLOhLMTyG6IcrOZrj973uuCg0"/>
+<img class="w-full h-full object-cover" data-alt="Close up of a Buddhist monk's hands holding incense sticks with soft smoke rising in a sunlit temple courtyard" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjNoUbLNsM4VuPEmmgvky6JH0RSnZeltkUU_omo0pu7duJzUe4htbUqGSJGFtBb7nRZ-q3cu72w_toHZhS9l-YkBw6vW8Tk06qWf0-vaTjMlAQzmFKl4hSd3aA3ascZEd7cNXZoL-GPz-elCdeLZZFBX7M6-W5unIJDsziwt9ubak_WxQBLA3DDI8w2hbMLuECX__MaOv6n8ETf2Qz_0rop6ZF73eAL_R-AkRM3kiR7E2Y1-6TjgxLOhLMTyG6IcrOZrj973uuCg0"/>
 </div>
 <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/10 -z-0"></div>
 </div>
@@ -237,7 +254,7 @@
 </div>
 </section>
 <!-- Benefits Section -->
-<section class="bg-[#FFF8F0] py-16 md:py-24" id="benefits">
+<section class="bg-[#FFF8F0] py-16 md:py-24 reveal" id="benefits">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
 <p class="text-on-surface-variant">Với mong muốn Quý Phật tử và gia quyến có một hành trình tâm linh trọn vẹn, Ban tổ chức xin được hỗ trợ chu đáo các công tác sau:</p>
@@ -268,7 +285,7 @@
 </div>
 </section>
 <!-- Schedule Section -->
-<section class="py-16 md:py-24" id="schedule">
+<section class="py-16 md:py-24 reveal defer-render" id="schedule">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
 <h2 class="font-display text-4xl text-primary mb-4">Chương Trình Đại Lễ</h2>
@@ -341,7 +358,7 @@
 </div>
 </section>
 <!-- Photo Gallery -->
-<section class="py-16 md:py-24 bg-surface-container-low" id="gallery">
+<section class="py-16 md:py-24 bg-surface-container-low reveal defer-render" id="gallery">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-14">
 <h2 class="font-display text-4xl text-primary">Khoảnh Khắc Đại Lễ </h2>
@@ -349,26 +366,26 @@
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
 <figure class="overflow-hidden rounded-xl border border-primary-container/15 shadow-sm group lg:col-span-7">
-<img class="w-full h-[360px] md:h-[430px] object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Khoanh khac dai le cau sieu noi bat 1" loading="lazy" src="assets/images/cau%20sieu%201.jpg"/>
+<img class="w-full h-[360px] md:h-[430px] object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Khoanh khac dai le cau sieu noi bat 1" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/cau%20sieu%201.jpg"/>
 </figure>
 <figure class="overflow-hidden rounded-xl border border-primary-container/15 shadow-sm group lg:col-span-5">
-<img class="w-full h-[360px] md:h-[430px] object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Khoanh khac dai le cau sieu noi bat 2" loading="lazy" src="assets/images/cau%20sieu%202.jpg"/>
+<img class="w-full h-[360px] md:h-[430px] object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Khoanh khac dai le cau sieu noi bat 2" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/cau%20sieu%202.jpg"/>
 </figure>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 3" loading="lazy" src="assets/images/3.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 5" loading="lazy" src="assets/images/5.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 6" loading="lazy" src="assets/images/6.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 7" loading="lazy" src="assets/images/7.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 8" loading="lazy" src="assets/images/8.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 9" loading="lazy" src="assets/images/9.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 10" loading="lazy" src="assets/images/10.jpg"/></figure>
-<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 11" loading="lazy" src="assets/images/11.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 3" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/3.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 5" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/5.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 6" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/6.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 7" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/7.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 8" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/8.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 9" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/9.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 10" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/10.jpg"/></figure>
+<figure class="overflow-hidden rounded-lg border border-primary-container/15 group"><img class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hinh anh dai le 11" decoding="async" fetchpriority="low" loading="lazy" src="assets/images/11.jpg"/></figure>
 </div>
 </div>
 </section>
 <!-- Registration Form -->
-<section class="py-16 md:py-24 relative overflow-hidden" id="register">
+<section class="py-16 md:py-24 relative overflow-hidden reveal" id="register">
 <div class="absolute inset-0 bg-secondary-container/20 -z-10"></div>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 <div>
@@ -443,7 +460,7 @@
 </div>
 </section>
 <!-- Location Section -->
-<section class="py-16 md:py-24 bg-surface-container-low">
+<section class="py-16 md:py-24 bg-surface-container-low reveal defer-render">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
 <div class="space-y-8 flex flex-col justify-center">
 <h2 class="font-display text-4xl text-primary">Vị Trí Tổ Chức</h2>
@@ -508,6 +525,64 @@
 <img alt="Anh phong to" class="max-h-[90vh] w-auto max-w-[95vw] object-contain rounded-md shadow-2xl" id="lightbox-image" src=""/>
 </div>
 <script>
+      (function () {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealItems = Array.from(document.querySelectorAll(".reveal"));
+
+        if (prefersReducedMotion) {
+          revealItems.forEach(function (item) {
+            item.classList.add("in-view");
+          });
+          return;
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          revealItems.forEach(function (item) {
+            item.classList.add("in-view");
+          });
+          return;
+        }
+
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+        revealItems.forEach(function (item) {
+          revealObserver.observe(item);
+        });
+      })();
+
+      (function () {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const heroImage = document.querySelector("header .absolute img");
+
+        if (prefersReducedMotion || !heroImage) {
+          return;
+        }
+
+        let ticking = false;
+
+        function updateParallax() {
+          const offset = Math.min(window.scrollY * 0.12, 42);
+          heroImage.style.transform = "translate3d(0," + offset + "px,0) scale(1.02)";
+          ticking = false;
+        }
+
+        window.addEventListener("scroll", function () {
+          if (ticking) {
+            return;
+          }
+          ticking = true;
+          window.requestAnimationFrame(updateParallax);
+        }, { passive: true });
+      })();
+
       (function () {
         const toggleButton = document.getElementById("mobile-menu-toggle");
         const menu = document.getElementById("mobile-menu");
