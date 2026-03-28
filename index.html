@@ -147,8 +147,6 @@
 <div class="hidden lg:flex items-center space-gap-8 gap-8 font-['Inter'] text-sm tracking-wide">
 <a class="text-primary dark:text-primary-container font-semibold border-b-2 border-primary-container pb-1 transition-all duration-300" href="#">Trang Chủ</a>
 <a class="text-neutral-600 hover:text-primary transition-colors" href="#meaning">Ý Nghĩa</a>
-<a class="text-neutral-600 hover:text-primary transition-colors" href="#schedule">Nghi Lễ</a>
-<a class="text-neutral-600 hover:text-primary transition-colors" href="#gallery">Tưởng Niệm</a>
 <a class="text-neutral-600 hover:text-primary transition-colors" href="#services">Dịch Vụ</a>
 <a class="text-neutral-600 hover:text-primary transition-colors" href="#products">Khu Mộ Phần</a>
 <a class="text-neutral-600 hover:text-primary transition-colors" href="#footer">Liên Hệ</a>
@@ -163,8 +161,6 @@
 <div class="grid gap-2 text-sm font-semibold text-primary">
 <a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#">Trang Chủ</a>
 <a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#meaning">Ý Nghĩa</a>
-<a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#schedule">Nghi Lễ</a>
-<a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#gallery">Tưởng Niệm</a>
 <a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#services">Dịch Vụ</a>
 <a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#products">Khu Mộ Phần</a>
 <a class="tap-fast min-h-[44px] flex items-center px-3 rounded-md hover:bg-primary-container/10" href="#footer">Liên Hệ</a>
@@ -190,7 +186,7 @@
 </div>
 <div class="flex flex-wrap gap-3 sm:gap-4 pt-2">
 <a class="tap-fast min-h-[44px] w-full sm:w-auto bg-primary-container text-on-primary-container px-6 sm:px-8 py-3.5 font-bold text-xs sm:text-sm tracking-[0.16em] uppercase rounded-lg hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/20 transition-all inline-flex items-center justify-center" href="#register">Đăng Ký Tham Dự – Miễn Phí</a>
-<a class="tap-fast min-h-[44px] w-full sm:w-auto border border-primary/35 bg-background/55 backdrop-blur-sm text-primary px-6 sm:px-8 py-3.5 font-bold text-xs sm:text-sm tracking-[0.16em] uppercase rounded-lg hover:bg-primary-container/10 hover:-translate-y-0.5 transition-all inline-flex items-center justify-center" href="#schedule">Xem Chương Trình ↓</a>
+<a class="tap-fast min-h-[44px] w-full sm:w-auto border border-primary/35 bg-background/55 backdrop-blur-sm text-primary px-6 sm:px-8 py-3.5 font-bold text-xs sm:text-sm tracking-[0.16em] uppercase rounded-lg hover:bg-primary-container/10 hover:-translate-y-0.5 transition-all inline-flex items-center justify-center" href="https://cphaco.vn/dai-le-cau-sieu-cau-an-tiet-thanh-minh-2026/" target="_blank">Xem Chương Trình ↓</a>
 </div>
 <div class="bg-surface-container-lowest/78 backdrop-blur-sm p-4 inline-flex items-center gap-3 rounded-lg border border-primary-container/20 shadow-sm">
 <span class="material-symbols-outlined text-primary" data-icon="directions_bus">directions_bus</span>
@@ -264,7 +260,7 @@
 </div>
 </section>
 <!-- Schedule Section -->
-<section class="py-16 md:py-24 reveal defer-render" id="schedule">
+<section class="py-16 md:py-24 reveal defer-render" id="schedule" hidden>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
 <h2 class="font-display text-4xl text-primary mb-4">Chương Trình Đại Lễ</h2>
@@ -337,7 +333,7 @@
 </div>
 </section>
 <!-- Photo Gallery -->
-<section class="py-16 md:py-24 bg-surface-container-low reveal defer-render" id="gallery">
+<section class="py-16 md:py-24 bg-surface-container-low reveal defer-render" id="gallery" hidden>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-14">
 <h2 class="font-display text-4xl text-primary">Khoảnh Khắc Đại Lễ </h2>
@@ -427,7 +423,7 @@
           </ul>
         </div>
         <div class="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 lg:pb-8 mt-auto">
-          <a href="#register" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center bg-primary-container text-on-primary-container font-bold text-sm py-3 rounded-lg hover:brightness-110 transition-all">
+          <a href="#" data-open-contact-modal="true" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center bg-primary-container text-on-primary-container font-bold text-sm py-3 rounded-lg hover:brightness-110 transition-all">
             Nhận Thông Tin & Bảng Giá
           </a>
         </div>
@@ -449,29 +445,29 @@
           </ul>
         </div>
         <div class="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 lg:pb-8 mt-auto">
-          <a href="#register" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center border border-primary/30 text-primary font-semibold text-sm py-3 rounded-lg hover:bg-primary-container/10 transition-colors">
+          <a href="#" data-open-contact-modal="true" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center border border-primary/30 text-primary font-semibold text-sm py-3 rounded-lg hover:bg-primary-container/10 transition-colors">
             Nhận Thông Tin & Bảng Giá
           </a>
         </div>
       </div>
 
-      <!-- Card 3: Lăng Mộ & Mộ Nghệ Thuật -->
+      <!-- Card 3: Mộ Song Thân -->
       <div class="bg-surface-container-lowest border border-primary-container/20 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
         <div class="h-2 bg-gradient-to-r from-primary-container to-secondary"></div>
         <div class="p-5 sm:p-6 lg:p-8 flex-1 flex flex-col">
-          <img alt="Lăng mộ cao cấp và khu mộ nghệ sĩ" class="w-full h-44 object-cover rounded-lg border border-primary-container/15 mb-6" loading="lazy" src="https://cphaco.vn/wp-content/uploads/2025/08/trang-chu-2.jpg"/>
-          <span class="text-[10px] uppercase tracking-[0.18em] text-primary-container font-bold">Không Gian Cá Nhân Hoá</span>
-          <h3 class="font-display text-2xl text-primary mt-2 mb-4">Lăng Mộ & Mộ Nghệ Thuật</h3>
-          <p class="text-xs uppercase tracking-[0.14em] text-secondary font-semibold mb-4">Lăng Mộ Cao Cấp · Khu Mộ Nghệ Sĩ</p>
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Giải pháp cao cấp mang đậm dấu ấn cá nhân và gia tộc, kết hợp giá trị mỹ thuật với công năng thờ phụng theo chuẩn mực tôn nghiêm.</p>
+          <img alt="Mộ song thân cao cấp" class="w-full h-44 object-cover rounded-lg border border-primary-container/15 mb-6" loading="lazy" src="assets/images/song-than.png"/>
+          <span class="text-[10px] uppercase tracking-[0.18em] text-primary-container font-bold">Dành Cho Song Thân</span>
+          <h3 class="font-display text-2xl text-primary mt-2 mb-4">Mộ Song Thân</h3>
+          <p class="text-xs uppercase tracking-[0.14em] text-secondary font-semibold mb-4">Mộ Song Thân · Mộ Phu Thê</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Giải pháp an nghỉ trang nghiêm dành cho hai người thân, tối ưu diện tích, thẩm mỹ đồng bộ và thuận tiện cho gia đình thăm viếng lâu dài.</p>
           <ul class="space-y-2 text-sm text-on-surface-variant mb-6">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Lăng Mộ Cao Cấp – thiết kế độc bản theo yêu cầu gia đình</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Khu Mộ Nghệ Sĩ – nơi an nghỉ nhiều văn nhân nghệ sĩ nổi tiếng</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Tư vấn 3D trước thi công, đá hoa cương nhập khẩu</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Thiết kế dành riêng cho nhu cầu an nghỉ song thân</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Bố cục hài hoà, dễ chăm sóc và thuận tiện hương khói</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-base">check_circle</span> Đa dạng vị trí và diện tích theo ngân sách gia đình</li>
           </ul>
         </div>
         <div class="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 lg:pb-8 mt-auto">
-          <a href="#register" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center border border-primary/30 text-primary font-semibold text-sm py-3 rounded-lg hover:bg-primary-container/10 transition-colors">
+          <a href="#" data-open-contact-modal="true" class="tap-fast min-h-[44px] w-full inline-flex items-center justify-center border border-primary/30 text-primary font-semibold text-sm py-3 rounded-lg hover:bg-primary-container/10 transition-colors">
             Nhận Thông Tin & Bảng Giá
           </a>
         </div>
@@ -702,7 +698,75 @@
 </button>
 <img alt="Anh phong to" class="max-h-[90vh] w-auto max-w-[95vw] object-contain rounded-md shadow-2xl" id="lightbox-image" src=""/>
 </div>
+<div aria-hidden="true" class="fixed inset-0 z-[95] hidden items-center justify-center bg-black/60 p-4" id="contact-modal">
+<div class="relative w-full max-w-md rounded-xl border border-primary-container/30 bg-background p-6 shadow-2xl">
+<button aria-label="Đóng liên hệ nhanh" class="absolute right-3 top-3 tap-fast min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-lg text-primary hover:bg-primary-container/10" id="contact-modal-close" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-display text-2xl text-primary">Liên Hệ Nhanh Nhận Báo Giá</h3>
+<p class="mt-2 text-sm text-on-surface-variant">Chọn kênh phù hợp để chuyên viên tư vấn hỗ trợ ngay.</p>
+<div class="mt-5 grid gap-3">
+<a href="https://www.facebook.com/cphacobd.vn" target="_blank" rel="noopener noreferrer" class="tap-fast min-h-[44px] inline-flex items-center justify-center rounded-lg border border-primary/30 px-4 py-3 text-sm font-semibold text-primary hover:bg-primary-container/10 transition-colors">
+Facebook
+</a>
+<a href="https://zalo.me/0869555444" target="_blank" rel="noopener noreferrer" class="tap-fast min-h-[44px] inline-flex items-center justify-center rounded-lg border border-primary/30 px-4 py-3 text-sm font-semibold text-primary hover:bg-primary-container/10 transition-colors">
+Zalo
+</a>
+<a href="tel:0869555444" class="tap-fast min-h-[44px] inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-bold text-on-primary hover:brightness-110 transition-all">
+Gọi 0818.555.444
+</a>
+</div>
+</div>
+</div>
 <script>
+      (function () {
+        const contactModal = document.getElementById("contact-modal");
+        const closeModalButton = document.getElementById("contact-modal-close");
+        const openModalTriggers = Array.from(document.querySelectorAll("[data-open-contact-modal='true']"));
+
+        if (!contactModal || !closeModalButton || openModalTriggers.length === 0) {
+          return;
+        }
+
+        function openContactModal() {
+          contactModal.classList.remove("hidden");
+          contactModal.classList.add("flex");
+          contactModal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("overflow-hidden");
+        }
+
+        function closeContactModal() {
+          contactModal.classList.add("hidden");
+          contactModal.classList.remove("flex");
+          contactModal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        openModalTriggers.forEach(function (trigger) {
+          trigger.addEventListener("click", function (event) {
+            event.preventDefault();
+            openContactModal();
+          });
+        });
+
+        closeModalButton.addEventListener("click", closeContactModal);
+
+        contactModal.addEventListener("click", function (event) {
+          if (event.target === contactModal) {
+            closeContactModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (contactModal.classList.contains("hidden")) {
+            return;
+          }
+          if (event.key === "Escape") {
+            closeContactModal();
+          }
+        });
+      })();
+
       (function () {
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const revealItems = Array.from(document.querySelectorAll(".reveal"));
